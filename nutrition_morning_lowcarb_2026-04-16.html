@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NUTRITION MORNING EDITION — Podstawy diety niskowęglowodanowej</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f5f0e8;
+  --paper: #fbf8f3;
+  --sand: #e9dfd1;
+  --olive: #dfe6db;
+  --rose: #efdbdc;
+  --charcoal: #23252b;
+  --navy: #1b2230;
+  --ink: #181818;
+  --muted: #5d5b57;
+  --line: #d7cec2;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+}
+.container {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+}
+.cover {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 40px 0 56px;
+  background:
+    radial-gradient(circle at 85% 12%, rgba(123,96,66,.10), transparent 22%),
+    linear-gradient(180deg, rgba(255,255,255,.45), rgba(255,255,255,0) 24%),
+    var(--cream);
+  border-bottom: 1px solid var(--line);
+}
+.cover-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 28px;
+  align-items: end;
+}
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(56px, 10vw, 118px);
+  line-height: .95;
+  margin: 0 0 20px;
+  max-width: 8ch;
+}
+.deck {
+  font-size: clamp(23px, 3vw, 34px);
+  line-height: 1.22;
+  max-width: 21ch;
+  margin: 0 0 24px;
+}
+.meta {
+  font-size: 20px;
+  color: var(--muted);
+}
+.sidecard {
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.58);
+  padding: 24px;
+}
+.sidecard p {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.55;
+}
+.section {
+  padding: 68px 0;
+  border-bottom: 1px solid var(--line);
+}
+.theme-sand { background: var(--sand); }
+.theme-olive { background: var(--olive); }
+.theme-rose { background: var(--rose); }
+.theme-charcoal {
+  background: var(--charcoal);
+  color: #f4f0e8;
+}
+.theme-charcoal .label,
+.theme-charcoal .smallnote {
+  color: rgba(244,240,232,.72);
+}
+.theme-navy {
+  background: var(--navy);
+  color: #f5f0e9;
+}
+.theme-navy .label,
+.theme-navy .smallnote {
+  color: rgba(245,240,233,.75);
+}
+.spread {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 24px;
+}
+.num {
+  font-family: "Fraunces", serif;
+  font-size: 92px;
+  line-height: .88;
+}
+.label {
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+h2 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1.03;
+  margin: 0 0 16px;
+  max-width: 14ch;
+}
+.standfirst {
+  font-size: 28px;
+  line-height: 1.24;
+  margin: 0 0 22px;
+  max-width: 23ch;
+}
+.body {
+  max-width: 44ch;
+}
+.body p, .body li {
+  font-size: 22px;
+  line-height: 1.65;
+}
+.body p {
+  margin: 0 0 16px;
+}
+.body ul {
+  margin: 0;
+  padding-left: 24px;
+}
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.card {
+  border: 1px solid rgba(0,0,0,.10);
+  background: rgba(255,255,255,.42);
+  padding: 22px;
+}
+.theme-charcoal .card, .theme-navy .card {
+  border-color: rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+}
+.card h3 {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 14px;
+}
+.card p {
+  font-size: 21px;
+  line-height: 1.55;
+}
+.callout {
+  margin-top: 24px;
+  border-left: 4px solid currentColor;
+  padding-left: 16px;
+  font-size: 23px;
+  line-height: 1.5;
+  max-width: 34ch;
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.badge {
+  border: 1px solid currentColor;
+  padding: 8px 12px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 18px;
+  margin-top: 12px;
+}
+.fact {
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.55);
+  font-size: 22px;
+  line-height: 1.5;
+}
+.stat {
+  font-family: "Fraunces", serif;
+  font-size: clamp(72px, 10vw, 128px);
+  line-height: .9;
+  margin: 8px 0 0;
+}
+.footer {
+  padding: 54px 0 78px;
+  background: var(--cream);
+}
+.footer p {
+  font-size: 22px;
+  line-height: 1.65;
+  max-width: 46ch;
+}
+@media (max-width: 900px) {
+  .cover-grid, .spread, .grid-2, .facts {
+    grid-template-columns: 1fr;
+  }
+  .num { font-size: 64px; }
+  .container { width: min(1160px, calc(100% - 24px)); }
+  .body p, .body li, .card p, .fact, .footer p, .sidecard p { font-size: 19px; }
+  .standfirst { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="container cover-grid">
+    <div>
+      <div class="kicker">Nutrition Morning Edition</div>
+      <h1>Podstawy diety niskowęglowodanowej</h1>
+      <p class="deck">Nie chodzi o listę produktów zakazanych. Chodzi o stabilniejszą energię, większą sytość i model żywienia, który współpracuje z fizjologią apetytu.</p>
+      <div class="meta">2026-04-16 · temat dnia: Podstawy diety niskowęglowodanowej</div>
+    </div>
+    <div class="sidecard">
+      <p><strong>Zakres numeru.</strong> To wydanie dotyczy podstaw: po co ogranicza się węglowodany, komu taki model najbardziej służy, jaką rolę odgrywają białko i insulina oraz jak odróżnić sensowny low-carb od wersji opartej wyłącznie na etykietach „keto” i „fit”.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-sand">
+  <div class="container spread">
+    <div class="num">01</div>
+    <div>
+      <div class="label">Editorial intro</div>
+      <h2>Low-carb jest przede wszystkim strategią regulacji apetytu i energii.</h2>
+      <p class="standfirst">Najwięcej nieporozumień bierze się z traktowania tej diety jak prostego zakazu pieczywa, makaronu i owoców.</p>
+      <div class="body">
+        <p>Podstawy diety niskowęglowodanowej są często przedstawiane jako lista produktów dozwolonych i zakazanych. To podejście jest wtórne. Pierwszym celem jest stabilizacja apetytu i energii w ciągu dnia, a dopiero potem dobór konkretnych produktów.</p>
+        <p>Największe nieporozumienie polega na traktowaniu low-carb jako diety eliminacyjnej. W praktyce jest to strategia regulacji gospodarki glukozowo-insulinowej. U części osób prowadzi to do mniejszej zmienności energii, rzadszego podjadania i łatwiejszej kontroli masy ciała.</p>
+        <p>Nie jest to jednak model optymalny dla wszystkich. Osoby bardzo aktywne, z określonymi potrzebami treningowymi lub bez zaburzeń regulacji apetytu mogą nie odczuwać wyraźnych korzyści.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-olive">
+  <div class="container spread">
+    <div class="num">02</div>
+    <div>
+      <div class="label">Study of the day</div>
+      <h2>Najbardziej wyraźny efekt widać zwykle tam, gdzie glukoza i insulina już wcześniej były źle regulowane.</h2>
+      <p class="standfirst">Diety niskowęglowodanowe nie są jednakowo przydatne w każdej sytuacji metabolicznej.</p>
+      <div class="body">
+        <p>Badania porównujące diety niskowęglowodanowe z dietami o wyższej zawartości węglowodanów wskazują, że u osób z nadwagą i insulinoopornością low-carb może poprawiać kontrolę glikemii i obniżać poziom insuliny <strong>(RCT)</strong>.</p>
+        <p>Efekt jest najbardziej widoczny u osób z zaburzoną regulacją glukozy. U osób metabolicznie zdrowych różnice między dietami często się zmniejszają <strong>(przegląd systematyczny)</strong>.</p>
+      </div>
+      <div class="callout">Wniosek praktyczny: low-carb jest narzędziem celowanym, a nie uniwersalnym rozwiązaniem.</div>
+      <div class="badges">
+        <div class="badge">glikemia</div>
+        <div class="badge">insulina</div>
+        <div class="badge">zastosowanie selektywne</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-navy">
+  <div class="container spread">
+    <div class="num">03</div>
+    <div>
+      <div class="label">Mechanism</div>
+      <h2>Mniejsza ilość węglowodanów oznacza zwykle mniejsze skoki glukozy i insuliny po posiłku.</h2>
+      <p class="standfirst">To właśnie ten mechanizm pomaga części osób lepiej korzystać z własnych zapasów energii.</p>
+      <div class="body">
+        <p>Redukcja węglowodanów zmniejsza poposiłkowy wzrost glukozy i insuliny <strong>(mechanistyczne)</strong>. Niższy poziom insuliny sprzyja większej dostępności tłuszczu jako źródła energii.</p>
+        <p>W praktyce może to oznaczać mniejsze wahania energii, rzadsze epizody silnego głodu i większą tolerancję przerw między posiłkami. Ten model jest spójny z obserwacjami dotyczącymi lipolizy i regulacji apetytu <strong>(mechanistyczne – Bikman)</strong>.</p>
+        <p>Mechanizm nie działa jednak w izolacji. Znaczenie ma całkowita kompozycja diety, ilość białka i stopień przetworzenia żywności.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-rose">
+  <div class="container spread">
+    <div class="num">04</div>
+    <div>
+      <div class="label">Myth of the day</div>
+      <h2>„Na diecie niskowęglowodanowej trzeba po prostu jeść bardzo dużo tłuszczu.”</h2>
+      <p class="standfirst">To skrót myślowy, który często prowadzi do źle skomponowanych posiłków.</p>
+      <div class="body">
+        <p>W praktyce kluczowe są odpowiednia ilość białka, kontrola apetytu i stabilność energetyczna. Zbyt duży nacisk na tłuszcz przy niskim białku może pogarszać sytość i utrudniać kontrolę ilości jedzenia <strong>(obserwacja kliniczna – Naiman)</strong>.</p>
+        <p>Podstawy low-carb nie polegają więc na mechanicznym dolewaniu tłuszczu do wszystkiego, tylko na budowaniu posiłków, po których człowiek jest syty i mniej skłonny do podjadania.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container spread">
+    <div class="num">05</div>
+    <div>
+      <div class="label">Practical application</div>
+      <h2>Najrozsądniej zacząć od jednego dobrze ustawionego posiłku dziennie.</h2>
+      <p class="standfirst">Nie od restrykcyjnego planu, tylko od obserwacji sytości i energii po konkretnym zestawie makroskładników.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Model posiłku</h3>
+          <p>Źródło białka: jajka, mięso, ryba lub twaróg. Do tego źródło tłuszczu: masło, oliwa, awokado. Ilość węglowodanów niewielka i nie dominująca.</p>
+        </div>
+        <div class="card">
+          <h3>Co obserwować</h3>
+          <p>Jak długo utrzymuje się sytość, czy spada potrzeba podjadania i czy energia pozostaje stabilna przez kilka godzin.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-olive">
+  <div class="container spread">
+    <div class="num">06</div>
+    <div>
+      <div class="label">Clinical case</div>
+      <h2>Częsty wzorzec: problem nie wynika z braku silnej woli, tylko z mało sycącej konstrukcji dnia.</h2>
+      <p class="standfirst">Kiedy pierwszy posiłek staje się bardziej białkowo-tłuszczowy, liczba decyzji żywieniowych zwykle wyraźnie spada.</p>
+      <div class="body">
+        <p>W praktyce często obserwuje się ten sam schemat: częste podjadanie, zmienność energii i trudność w utrzymaniu diety. Interwencja polega na zwiększeniu białka i ograniczeniu węglowodanów w pierwszym posiłku.</p>
+        <p>Efektem bywa wydłużenie czasu między posiłkami i mniejsza liczba decyzji żywieniowych <strong>(obserwacja kliniczna – Unwin)</strong>. To nie rozwiązuje wszystkiego, ale bywa dobrym pierwszym ruchem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-charcoal">
+  <div class="container spread">
+    <div class="num">07</div>
+    <div>
+      <div class="label">Nutrient spotlight</div>
+      <h2>Białko w dietach low-carb pełni funkcję regulacyjną, a nie wyłącznie odżywczą.</h2>
+      <p class="standfirst">To jeden z najważniejszych składników, jeśli celem jest sytość i utrzymanie masy mięśniowej.</p>
+      <div class="body">
+        <p>Białko zwiększa sytość <strong>(RCT)</strong>, wspiera utrzymanie masy mięśniowej i stabilizuje apetyt. Zbyt niska podaż białka w modelu low-carb może prowadzić do zwiększonego łaknienia i kompensacji kalorycznej.</p>
+        <p>Wniosek jest prosty: białko nie jest dodatkiem. Jest jednym z filarów dobrze prowadzonej diety niskowęglowodanowej.</p>
+      </div>
+      <div class="badges">
+        <div class="badge">sytość</div>
+        <div class="badge">mięśnie</div>
+        <div class="badge">kontrola apetytu</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-sand">
+  <div class="container spread">
+    <div class="num">08</div>
+    <div>
+      <div class="label">Trend watch</div>
+      <h2>„Keto dla wszystkich” brzmi dobrze marketingowo, ale słabo opisuje rzeczywistość kliniczną.</h2>
+      <p class="standfirst">Stopień ograniczenia węglowodanów powinien wynikać z potrzeb metabolicznych, a nie z mody.</p>
+      <div class="body">
+        <p>Promowanie bardzo niskiej podaży węglowodanów jako rozwiązania uniwersalnego jest uproszczeniem. Taki model może być skuteczny u osób z insulinoopornością <strong>(kliniczne + mechanistyczne)</strong>, ale nie jest konieczny dla każdego.</p>
+        <p>Częstym błędem jest brak dostosowania poziomu restrykcji do stylu życia, aktywności i celów metabolicznych. Dla części osób umiarkowany low-carb będzie praktyczniejszy i łatwiejszy do utrzymania niż ścisłe keto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container spread">
+    <div class="num">09</div>
+    <div>
+      <div class="label">Quick facts</div>
+      <h2>Cztery fakty, które porządkują temat.</h2>
+      <div class="facts">
+        <div class="fact">Sytość jest jednym z głównych regulatorów ilości jedzenia.</div>
+        <div class="fact">Insulina wpływa na dostępność energii z tkanki tłuszczowej <strong>(mechanistyczne)</strong>.</div>
+        <div class="fact">Białko zwykle daje większy efekt sytości niż same węglowodany <strong>(RCT)</strong>.</div>
+        <div class="fact">Model diety musi być możliwy do utrzymania, inaczej traci znaczenie praktyczne.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-rose">
+  <div class="container spread">
+    <div class="num">10</div>
+    <div>
+      <div class="label">What to ignore</div>
+      <h2>Nie warto opierać low-carb na wysoko przetworzonych produktach z etykietą „keto”.</h2>
+      <p class="standfirst">Zmiana makroskładników nie wystarcza, jeśli utrzymuje się ten sam mechanizm podjadania.</p>
+      <div class="body">
+        <p>Produkty „low-carb” wysoko przetworzone często zawierają dodatki zwiększające smakowitość i nie poprawiają regulacji apetytu. Mogą wręcz utrzymywać schemat ciągłego sięgania po coś małego, mimo formalnej zmiany diety.</p>
+        <p>To jeden z powodów, dla których dobrze prowadzony low-carb zwykle opiera się na prostych, sycących produktach, a nie na zamiennikach słodyczy i przekąsek.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section theme-navy">
+  <div class="container spread">
+    <div class="num">11</div>
+    <div>
+      <div class="label">Directly useful today</div>
+      <h2>Zrób dziś jeden posiłek oparty na białku i tłuszczu, a potem obserwuj organizm przez kilka godzin.</h2>
+      <p class="standfirst">To prostszy i bardziej wartościowy test niż kolejne czytanie o dietach.</p>
+      <div class="body">
+        <p>Obserwuj, kiedy pojawia się głód, czy potrzebujesz przekąsek i jak wygląda poziom energii przez 3–5 godzin. Taki eksperyment daje praktyczną informację o tym, czy model niskowęglowodanowy poprawia Twoją sytość i stabilność dnia.</p>
+      </div>
+      <div class="stat">3–5h</div>
+      <div class="smallnote">Dobry punkt odniesienia dla sytości po jednym dobrze zbudowanym posiłku.</div>
+    </div>
+  </div>
+</section>
+
+<section class="footer">
+  <div class="container">
+    <p><strong>Nota.</strong> Ten numer jest zbudowany jako wydanie wprowadzające. Jego celem nie jest omówienie wszystkich odmian low-carb, tylko uporządkowanie podstaw: komu taka dieta służy, jakie mechanizmy za nią stoją i od czego zacząć, żeby szybko zobaczyć, czy ma sens w praktyce.</p>
+  </div>
+</section>
+
+</body>
+</html>
